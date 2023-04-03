@@ -1,0 +1,143 @@
+@use 'colors';
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: colors.$neutral-light-gray;
+    color: colors.$neutral-transparent-white;
+    font-size: 15px;
+    box-sizing: border-box;
+    .container{
+        display: grid;
+        grid-template-rows: 1fr, 1fr, 1fr;
+        grid-template-columns: 1fr, 1fr, 1fr;
+        background-color: colors.$neutral-light-gray;
+        border: 1px solid colors.$neutral-light-gray;
+        border-radius: 10px;
+        overflow: hidden;
+        min-height: 100%;
+        h2{
+            font-family: 'Big Shoulders Display', cursive;
+            margin: 30px 0;
+            text-transform: uppercase;
+            font-size: 2.5em;
+            color: colors.$neutral-light-gray;
+        }
+        p{
+            font-family: 'Lexend Deca', sans-serif;
+            line-height: 25px;
+        }
+        article{
+            position: relative;
+            padding: 50px;
+            .btn{
+                height: 50px;
+                width: 170px;
+                border-radius: 30px;
+                cursor: pointer;
+                background-color: colors.$neutral-light-gray;
+                font-size: 16px;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+        .sedans{
+            background-color: colors.$bright-orange;
+            .btn{
+                &:hover{
+                    background-color: colors.$bright-orange;
+                    border: 2px solid colors.$neutral-light-gray;
+                    a{
+                        color: colors.$neutral-light-gray;
+                    }
+                }
+                a{
+                    color: colors.$bright-orange;
+                }
+            }
+
+        }
+        .suvs{
+            background-color: colors.$dark-cyan;
+            .btn{
+                &:hover{
+                    background-color: colors.$dark-cyan;
+                    border: 2px solid colors.$neutral-light-gray;
+                    a{
+                        color: colors.$neutral-light-gray;
+                    }
+                }
+                a{
+                    color: colors.$dark-cyan;
+                }
+            }
+        }
+        .luxury{
+            background-color: colors.$very-dark-cyan;
+            .btn{
+                &:hover{
+                    background-color: colors.$very-dark-cyan;
+                    border: 2px solid colors.$neutral-light-gray;
+                    a{
+                        color: colors.$neutral-light-gray;
+                    }
+                }
+                a{
+                    color: colors.$very-dark-cyan;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:0px) and (max-width:500px){
+    body{
+        .container{
+            margin: 20% 4%;
+            .sedans{
+                grid-row-start: 1;
+            }
+            .suvs{
+                grid-row-start: 2;
+            }
+            .luxury{
+                grid-row-start: 3;
+            }
+            p{
+                margin-bottom: 35px;
+            }
+        }
+    }
+}
+@media screen and (min-width:501px){
+    body{
+        padding: 5% 15%;
+        .sedans{
+            grid-column-start: 1;
+        }
+        .suvs{
+            grid-column-start: 2;
+        }
+        .luxury{
+            grid-column-start: 3;
+        }
+        article{
+            position: relative;
+        }
+        .btn{
+            position: absolute;
+            bottom: 50px;
+        }
+    }
+}
